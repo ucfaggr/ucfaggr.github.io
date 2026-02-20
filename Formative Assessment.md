@@ -1,12 +1,8 @@
 **Exploring the Relationship Between Street Network Centrality and Coffee Shop Location in Kingston upon Thames**
 
-Kingston upon Thames town centre is a major retail and transport hub in southwest London, anchored by Kingston Station, numerous bus routes, and a dense pedestrian street network. It is home to a large shopping centre and was ranked third in Newmark’s 2025 Retail Vitality Rankings of the UK’s best town centres for shopping. 
+Kingston upon Thames town centre is a major retail and transport hub in southwest London. Kingston supports a high concentration of cafés and coffee shops catering to shoppers and commuters. However, retail and hospitality success is uneven, highlighted by the recent closure of a coffee shop in the town centre.
 
-As a result, Kingston supports a high concentration of cafés and coffee shops catering to shoppers and commuters. However, retail and hospitality success is uneven, highlighted by the recent closure of a coffee shop in the town centre. 
-
-This study investigates whether street network centrality helps explain the spatial distribution of coffee shops in Kingston and whether low network accessibility may have contributed to the closure. 
-
-Using OpenStreetMap street network data within a 2000 m radius and coffee shop locations scraped from Google Maps, the analysis also explores where a new coffee shop could be located to maximise pedestrian footfall.
+This study investigates whether street network centrality helps explain the spatial distribution of coffee shops in Kingston and whether low network accessibility may have contributed to the closure.
 
 
 ```python
@@ -134,9 +130,9 @@ DG = ox.convert.to_digraph(G)
 
 **Network Centrality**
 
-Closeness centrality measures how easily a street segment can be reached from all other streets in the network. Streets with high closeness centrality are more centrally located and require fewer steps to access from across the wider area, making them highly accessible within the street network. In Kingston town centre, closeness centrality is highest in the core retail area, particularly around the main shopping streets and pedestrianised zones. These streets form the geometric centre of the network and are well connected in all directions. In contrast, peripheral residential streets and areas closer to the river exhibit lower closeness values, indicating reduced overall accessibility.
+In Kingston town centre, closeness centrality is highest in the core retail area, particularly around the main shopping streets and pedestrianised zones. In contrast, peripheral residential streets and areas closer to the river exhibit lower closeness values, indicating reduced overall accessibility.
 
-Betweenness centrality measures how frequently a street segment lies on the shortest paths between other streets. High betweenness streets act as key through-routes, concentrating pedestrian movement and potential footfall. In Kingston, high betweenness centrality is concentrated along a small number of primary corridors that connect the railway station, shopping centre, and surrounding neighbourhoods. Much of the wider network shows low betweenness, suggesting that pedestrian movement is channelled through a limited number of strategic routes rather than evenly distributed.
+High betweenness centrality is concentrated along a small number of primary corridors that connect the railway station, shopping centre, and surrounding neighbourhoods. Much of the wider network shows low betweenness, suggesting that pedestrian movement is channelled through a limited number of strategic routes rather than evenly distributed.
 
 
 ```python
@@ -301,11 +297,11 @@ plt.show()
 
 **Coffee Shops and Network Centrality**
 
-Coffee shops in Kingston cluster strongly within areas of high closeness centrality, reflecting a preference for highly accessible locations within the town centre, especially near the town's shopping hub. However, the closed coffee shop is also located on one of the most central streets, showing that despite high overall accessibility, they face high competitition.
+Coffee shops in Kingston cluster strongly within areas of high closeness centrality, reflecting a preference for highly accessible locations within the town's shopping hub. However, the closed coffee shop is also located on one of the most central streets. 
 
-The relationship is less clear for betweenness centrality. Most coffee shops are not positioned close to high-betweenness streets, and the closed shop lies on a segment with relatively low through-movement, which reduced its exposure to passing pedestrians, which may have contributed to lower footfall and eventual closure. 
+Most coffee shops, including the one that recently closed, are positioned on segments with relatively low through-movement, which reduces their exposure to passing pedestrians. This may have contributed to lower footfall and eventual closure.
 
-If a new coffee shop were to open, the optimal location would be along a street with both high closeness and high betweenness centrality near the core retail area, maximising accessibility and pedestrian flow. 
+I would propose, if a new coffee shop were to open, the optimal location would be positioned at the green cross on the map below, along a street with both high closeness and high betweenness centrality, maximising accessibility and pedestrian flow.
 
 
 ```python
